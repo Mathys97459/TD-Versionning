@@ -15,11 +15,12 @@ fetch("lib/albums.json")
         console.error(error);
     });
 
+// Fonction pour générer les albums
 const generateAlbums = () => {
     const container = document.getElementById("albumsContainer");
     container.innerHTML = "";
-
-    albums.forEach((album, index) => {
+    const albumsInverted = [...albums].reverse(); 
+    albumsInverted.forEach((album, index) => {
         const albumDiv = document.createElement("div");
         albumDiv.className = "col-md-12 mb-4";
 
@@ -55,6 +56,7 @@ const generateAlbums = () => {
     });
 };
 
+// Fonction pour supprimer un album
 const deleteAlbum = (index) => {
     if (confirm("Êtes-vous sûr de vouloir supprimer cet album ?")) {
         albums.splice(index, 1);
@@ -62,6 +64,7 @@ const deleteAlbum = (index) => {
     }
 };
 
+// Fonction pour ajouter une photo
 const addPhoto = (index) => {
     const photoUrl = prompt("Entrez l'URL de la photo :");
     const photoComment = prompt("Entrez un commentaire pour cette photo :");
@@ -75,8 +78,38 @@ const addPhoto = (index) => {
     }
 };
 
+// Fonction pour ajouter un album
+const addAlbum = (event) => {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    const title = document.getElementById("title").value;
+    const date = document.getElementById("date").value;
+    const access = document.getElementById("access").value.split(",").map(person => person.trim());
+
+    if (title && date && access.length > 0) {
+        const newAlbum = {
+            title: title,
+            date: date,
+            access: access,
+            photos: []
+        };
+
+        albums.push(newAlbum);
+        refreshAlbums();
+    } else {
+        alert("Veuillez remplir tous les champs.");
+    }
+};
+
+// Fonction pour rafraîchir l'affichage des albums
 const refreshAlbums = () => {
     window.deleteAlbum = deleteAlbum;
     window.addPhoto = addPhoto;
     generateAlbums();
 };
+
+// Ajouter un événement pour soumettre le formulaire d'ajout d'album
+document.getElementById("albumForm").addEventListener("submit", addAlbum);
+
+// Générer les albums au chargement
+generateAlbums();
