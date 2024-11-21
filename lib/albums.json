@@ -1,0 +1,52 @@
+[
+    {
+      "title": "Vacances à la montagne",
+      "date": "2024-01-15",
+      "access": ["Alice", "Bob", "Charlie"],
+      "photos": [
+        {
+          "url": "photo1.png",
+          "comments": ["Magnifique vue !", "On y retourne quand ?"]
+        },
+        {
+        "url": "photo2.jpg",
+          "comments": ["J'adore cet endroit.", "Trop cosy !"]
+        },
+        {
+          "url": "photo3.webp",
+          "comments": ["Le réveil valait le coup.", "Splendide lumière."]
+        }
+      ]
+    },
+    {
+      "title": "Voyage à Paris",
+      "date": "2024-03-10",
+      "access": ["Alice", "Diana"],
+      "photos": [
+        {
+          "url": "photo4.jpg",
+          "comments": ["Un classique incontournable.", "Les lumières sont magiques."]
+        },
+        {
+          "url": "photo5.jpg",
+          "comments": ["Le petit-déjeuner parisien parfait.", "Délicieux !"]
+        }
+      ]
+    },
+    {
+      "title": "Plage paradisiaque",
+      "date": "2024-07-22",
+      "access": ["Bob", "Charlie", "Diana"],
+      "photos": [
+        {
+          "url": "photo6.jpg",
+          "comments": ["Un moment inoubliable.", "La mer est si calme."]
+        },
+        {
+          "url": "photo7.webp",
+          "comments": ["Un vrai paradis tropical.", "J'aimerais être là en ce moment."]
+        }
+      ]
+    }
+  ]
+  
