@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-4 shadow" style="width: 400px;">
+            <h2 class="text-center mb-4">Connexion</h2>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" id="username" placeholder="Entrez votre nom d'utilisateur"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe"
+                        required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Se connecter</button>
+                <p id="errorMsg" class="text-danger mt-3 text-center d-none">Nom d'utilisateur ou mot de passe
+                    incorrect.</p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js" type="module"></script>
+</body>
+
+</html>
